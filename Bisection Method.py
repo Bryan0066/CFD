@@ -34,3 +34,5 @@ while PE > 1 and x < 10:
                "%.4f" % Xr, "%.4f" % func(Xr), "%.4f" % PE])
 
 print(t)
+
+exit = input()
