@@ -36,3 +36,4 @@ while PE > 1 and x < 10:
 print(t)
 
 end = input()
+
