@@ -29,7 +29,7 @@ Xr = XU - (func(XU)*(XL-XU))/(func(XL)-func(XU))
 t.add_row([x, "%.5f" % XL, "%.5f" % XU, "%.5f" % func(XL), "%.5f" % func(XU), "%.5f" % float(func(XL) * func(Xr))
               , "%.5f" % Xr, "%.5f" % func(Xr), "%.5f" % EA])
 # adds first (iteration 0) iteration to table
-while EA > .005:
+while EA > .001:
     if func(XL)*func(Xr) < 0:
 
         XU = Xr
