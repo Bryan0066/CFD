@@ -5,9 +5,6 @@ Xr = (XL + XU)/2
 PE = abs((XU-XL)/(XU+XL)) * 100
 
 
-
-
-
 def func(y):
     return 1-(400/(9.81*(3*y+(y**2)/2)**3))*(3+y)
 
