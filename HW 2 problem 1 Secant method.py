@@ -1,8 +1,6 @@
 from prettytable import PrettyTable
 import numpy as math
-
 XL, XU, p, mu, D = .00001, 1, 1.23, 1.79*10**-5, .5
-
 List1 = ["", "", 0.5411, 0.4588, 0.2512, 0.2075, 0.1239, 0.0836, 0.2075, 0.4588]
 
 print('Which pipe?')
