@@ -34,3 +34,5 @@ while EA > .001:
     x = x1
     t.add_row([i,  x,  EA])
 print(t)
+
+end = input()
