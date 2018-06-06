@@ -19,9 +19,10 @@ Re = (p*V*D)/mu
 def func(f):
     return 4*math.log10(Re*math.sqrt(f))-.4-(1/math.sqrt(f))
 
-t = PrettyTable(["Iteration", "Xl", "XU", "F(XL)", "F(XU)", "F(XR)*F(XU)", "XR", "F(XR)", "EA"])
-# Creates headers
 
+t = PrettyTable(["Iteration", "Xl", "XU", "F(XL)", "F(XU)", "F(XR)*F(XU)", "XR", "F(XR)", "EA"])
+
+# Creates headers
 
 Xr = XU - (func(XU)*(XL-XU))/(func(XL)-func(XU))
 

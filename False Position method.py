@@ -48,3 +48,4 @@ while EA > .001:
                "%.5f" % float(func(XL) * func(Xr)), Xr, "%.5f" % func(Xr), "%.5f" % EA])
 
 print(t)
+

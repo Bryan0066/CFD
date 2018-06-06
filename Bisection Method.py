@@ -1,5 +1,5 @@
 from prettytable import PrettyTable
-
+#bisection method
 XL, XU, x = .5, 2.5, 0
 Xr = (XL + XU)/2
 PE = abs((XU-XL)/(XU+XL)) * 100
@@ -35,4 +35,6 @@ while PE > 1 and x < 10:
 
 print(t)
 
-exit = input()
+end = input('')
+
+
