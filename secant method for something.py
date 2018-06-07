@@ -1,15 +1,16 @@
 from prettytable import PrettyTable
-import numpy as math
-XL, XU, g, Q = .00001, 1, 9.81, 20
+import sympy as sym
+
+Wo, L, E, y, I = 15, 3, 70, .009, 52.9*10**-6
 
 
-def func(y):
-    return float(1-((Q**2)/(g*(3*y+((y**2)/2))**3))*(3+y))
+def func(v):
+    return (Wo*L)/(3*(3.14**4)*E*I)*(48*(L**3)*sym.cos((3.14/2*L)*v)-(48*(L**3))+(3*3.14**3*L*v**2)-(3.14**3*v**3))-y
 
 
 t = PrettyTable(["Iteration", "X", "EA"])  # headers
 
-EA, x, xp, i = 100, float(.0035), float(.003), 0
+EA, x, xp, i = 100, 1.8, 1.9, 0
 
 t.add_row((i, "%.6f" % x, "%.6f" % EA))
 
