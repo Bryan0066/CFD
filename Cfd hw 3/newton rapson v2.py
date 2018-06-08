@@ -1,11 +1,17 @@
 from prettytable import PrettyTable
+import math
 import sympy as sym
+<<<<<<< HEAD
 from sympy import *
 from prettytable import PrettyTable
 import math
 import sympy as sym
 
 Wo, L, E, y, I, pi, EA, x, i = 15*10**3, 3, 70*10**9, .009, 52.9*10**-6, math.pi, 100, 1.8, 0
+=======
+
+Wo, L, E, y, I, pi, EA, x, i = 15, 3, 70, .009, 52.9*10**-6, math.pi, 100, 1.8, 0
+>>>>>>> d80de3445a69ecbb322068545c2de59efcddceac
 
 
 def func(k):
