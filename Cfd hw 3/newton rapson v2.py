@@ -2,8 +2,6 @@ from prettytable import PrettyTable
 import math
 import sympy as sym
 
-
-
 Wo, L, E, y, I, pi, EA, x, i = 15, 3, 70, .009, 52.9*10**-6, math.pi, 100, 1.8, 0
 
 
