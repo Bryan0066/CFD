@@ -1,4 +1,7 @@
 from prettytable import PrettyTable
+import sympy as sym
+from sympy import *
+from prettytable import PrettyTable
 import math
 import sympy as sym
 

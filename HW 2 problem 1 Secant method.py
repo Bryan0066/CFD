@@ -15,7 +15,7 @@ Re = (p*V*D)/mu
 
 
 def func(f):
-    return float(4*math.log10(Re*math.sqrt(f))-.4-(1/math.sqrt(f)))
+    return 4*(math.log(Re*math.sqrt(f)))-.4-(1/math.sqrt(f))
 
 
 t = PrettyTable(["Iteration", "X", "EA"])  # headers
@@ -32,5 +32,5 @@ while EA > .001:
     EA = abs((x1 - x) / x1) * 100
     xp = x
     x = x1
-    t.add_row([i, "%.6f" % x, "%.6f" % EA])
+    t.add_row([i,"%.6f" % x, "%.6f" % EA])
 print(t)

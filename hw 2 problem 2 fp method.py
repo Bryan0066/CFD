@@ -1,4 +1,5 @@
 from prettytable import PrettyTable
+import numpy as math
 
 XL, XU, EA, Q, g, x = .5, 2.5, 100, 20, 9.81, 0
 # define variables
