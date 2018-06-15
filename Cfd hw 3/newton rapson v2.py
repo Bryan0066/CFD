@@ -1,17 +1,9 @@
-from prettytable import PrettyTable
-import math
-import sympy as sym
-<<<<<<< HEAD
 from sympy import *
-from prettytable import PrettyTable
 import math
 import sympy as sym
+import pandas as pd
 
-Wo, L, E, y, I, pi, EA, x, i = 15*10**3, 3, 70*10**9, .009, 52.9*10**-6, math.pi, 100, 1.8, 0
-=======
-
-Wo, L, E, y, I, pi, EA, x, i = 15, 3, 70, .009, 52.9*10**-6, math.pi, 100, 1.8, 0
->>>>>>> d80de3445a69ecbb322068545c2de59efcddceac
+Wo, L, E, y, I, pi, EA, x= 15*10**3, 3, 70*10**9, .009, 52.9*10**-6, math.pi, 100, 1.8
 
 
 def func(k):
@@ -22,17 +14,28 @@ v = sym.symbols('v')
 
 fprime = sym.diff(func(v), v)
 #  derives function
-print(fprime)
-t = PrettyTable(["Iteration", "X", "Error"])  # headers for table
 
-t.add_row((i, x, EA))   # adds row to table created by PrettyTable
+EAa = [EA]
+xa = [x]
 
 while EA > .01:
-    i = i + 1
     z = func(x)
     g = fprime.evalf(subs={v: x})
     x1 = x - (z / g)
     EA = abs((x1 - x) / x1) * 100
+    xa.append(round(x1,6))
+    EAa.append(round(EA,6))
     x = x1
-    t.add_row([i, x, EA])
-print(t)
+
+df = pd.DataFrame()
+
+xs = pd.Series(xa)
+EAs = pd.Series(EAa)
+
+df['x'] = xs.values
+df['EA'] = EAs.values
+
+print(df)
+
+# https://stackoverflow.com/questions/32138205/convert-list-to-a-1-column-panda-dataframe
+#  https://stackoverflow.com/questions/26666919/python-pandas-add-column-in-dataframe-from-list/38490727
