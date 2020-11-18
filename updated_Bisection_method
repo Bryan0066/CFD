@@ -1,0 +1,55 @@
+##something.py
+
+from prettytable import PrettyTable
+
+import pandas as pd
+
+XL, XU, x,= .5, 2.5, 0
+
+Xr = (XL + XU)/2
+PE = abs((XU-XL)/(XU+XL)) * 100
+
+def func(y):
+    return 1-(400/(9.81*(3*y+(y**2)/2)**3))*(3+y)
+
+data = {
+
+            "XL": [XL], 
+            "XU": [XU], 
+            "f(XL)": [func(XL)],
+            "f(XU)": [func(XU)], 
+            "f(XL)*f(Xr)": [float(func(XL) * func(Xr))], 
+            "Xr": [Xr],
+            "f(Xr)": [func(Xr)], 
+            "PE": [PE], 
+
+}
+
+while PE > 1 and x < 100:
+
+    if func(XL)*func(Xr) < 0:
+
+        XU = Xr
+
+    else:
+
+        XL = Xr
+
+    Xr = (XL + XU) / 2
+
+    PE = abs((XU - XL) / (XU + XL)) * 100
+
+    x = x+1
+
+    data["XL"].append(XL)
+    data["XU"].append(XU)
+    data["f(XL)"].append(func(XL))
+    data["f(XU)"].append(func(XU))
+    data["f(XL)*f(Xr)"].append(float(func(XL) * func(Xr)))
+    data["Xr"].append(Xr)
+    data["f(Xr)"].append(func(Xr))
+    data["PE"].append(PE)
+ 
+
+print(pd.DataFrame.from_dict(data))
+end = input()
